@@ -1,18 +1,20 @@
 :root{
     --accent-color: #fff;
-    --primary-color: #ff89f4;
+    --primary-color: #000;
+    --font-bold: fantasy;
+    --font-basic: monospace;
 }
 body{
     margin: 0;
-    font-family: math;
+    font-family: monospace;
+}
+h2{
+    font-size: 40px;
+    font-family: fantasy;
 }
 /* section 1 - hero section */
+
 .hero-section{
-    background-image: url('1.jpg');
-    background-size: cover;
-    /* background-attachment: fixed; */
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     height: clamp(100vw, 50px, 50%);
@@ -22,24 +24,40 @@ body{
     justify-content: center;
     height: 100vw;
     position: relative;
+    overflow: hidden;
+}
+.hero-background{
+    background-image: url('1.jpg');
+    background-size: cover;
+    width: 100%;
+    filter: blur(3px);
+    z-index: -1;
+    min-height: 100vh;
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .hero-section-opening{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    z-index: 1;
 }
 .hero-section h1{
     /* font-size: 3.5vw; */
     font-size: clamp(38px, 5rem, 5vw);
-    font-family: fantasy;
+    font-family: var(--font-bold);
     margin: 0;
     color: var(--primary-color);
+    text-shadow: 0 0 9px #ffffff24;
 }
 .hero-section p{
     font-size: 1.2vw;
     margin: 15px 0;
     color: var(--primary-color);
+    font-family: var(--font-basic);
 }
 .arrow-down{
     position: absolute;
@@ -87,12 +105,12 @@ body{
     align-items: center;
 }
 .trending-products h2{
-    font-size: 35px;
-    font-family: monospace;
+    font-size: 40px;
+    font-family: var(--font-basic);
     letter-spacing: -1px;
 }
 .product-gallery{
-    background-color: #ffe6fd;
+    background-color: #505f72;
     border-radius: 40px;
     display: flex;
     max-width: 90vw;
@@ -111,11 +129,17 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     flex: 1;
     max-width: 25vw;
     position: relative;
     border-radius: 25px;
     overflow: hidden;
+    box-shadow: 0px 0px 19px -12px #0000008a;
+}
+.product-gallery .image-container:hover{
+    box-shadow: 0px 0px 20px -7px #ffffffd4;
+    animation: shadowdelay 0.25s;
 }
 .product-gallery .image-container img{
     max-width: 100%;
@@ -123,20 +147,40 @@ body{
 .product-gallery .image-container .image-overlay{
     background-color: #fff2ff54;
     position: absolute;
-    height: 100%;
-    width: 100%;
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     display: none;
     font-size: 35px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 .product-gallery .image-container:hover .image-overlay{
     display: flex;
-    animation: fade 0.5s;
+    height: 100%;
+    width: 100%;
+    animation: fade 0.15s;
 }
 @keyframes fade{
-    0%{opacity: 0;}
-    100%{opacity: 100%;}
+    0%{opacity: 0; width: 0%; height: 0%; border-radius: 100%;}
+    100%{opacity: 100%; width: 100%; height: 100%; border-radius: 25px;}
 }
-
+@keyframes shadowdelay{
+    0%{box-shadow: 0px 0px 0px 0px #aaa;}
+    100%{box-shadow: 0px 0px 20px -7px #ffffffd4}
+}
+.product-gallery .image-container .image-overlay .card-heading{
+    font-family: var(--font-bold);
+    margin: 8px;
+}
+.product-gallery .image-container .image-overlay .card-discription{
+    font-family: var(--font-basic);
+    font-size: 18px;
+    margin: 8px;
+}
+.collections{
+    text-align: center;
+    font-size: 20px;
+    display: flex;flex-direction: column;
+}
