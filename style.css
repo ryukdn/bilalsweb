@@ -190,9 +190,19 @@ h2{
     font-size: 18px;
     margin: 8px;
 }
+.trending-gallery .card .image-overlay .cards-link{
+    font-family: var(--font-basic);
+    font-size: 15px;
+    margin: 8px;
+    font-weight: 900;
+    color: var(--primary-color);
+}
 .collections-gallery-container{
     text-align: center;
     font-size: 20px;
+}
+.section-gallery{
+    margin-block-end: 20px;
 }
 .collections-gallery{
     display: flex;
