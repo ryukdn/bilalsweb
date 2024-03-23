@@ -27,6 +27,7 @@ h2{
     justify-content: space-around;
     align-items: center;
     z-index: 1;
+    text-align: center;
 }
 .hero-section .hero-header{
     margin: 0;
@@ -40,7 +41,8 @@ h2{
     text-shadow: 0 0 9px #ffffff24;
 }
 .hero-section p{
-    font-size: 1.2vw;
+    /* font-size: 1.2vw; */
+    font-size: clamp(0.7rem, 2.4rem, 1.4vw);
     margin: 15px 0;
     color: var(--primary-color);
     font-family: var(--font-basic);
@@ -97,11 +99,11 @@ h2{
     position: absolute;
     bottom: 8px;
 }
-/* @keyframes floatarrow{
+@keyframes floatarrow{
     0%{bottom: 20px}
     50%{bottom: 16px;}
     100%{bottom: 20px;}
-} */
+}
 
 /* section 2 - product gallery */
 
@@ -113,7 +115,8 @@ h2{
     align-items: center;
 }
 .trending-products h2{
-    font-size: 40px;
+    /* font-size: 40px; */
+    font-size: clamp(1.7rem, 3.5rem, 3.8vw);
     font-family: var(--font-bold);
     letter-spacing: -1px;
 }
@@ -270,4 +273,39 @@ h2{
 .hero-section .hero-header{
     letter-spacing: 3px;
 }
+
+
+
+.trending-products{
+    padding: 0px;
+}
+.trending-gallery, .cards-box{
+    border-radius: 16px;
+    gap: 0.5rem;
+    padding: 20px;
+}
+.trending-gallery .card, .cards-box .card{
+    border-radius: 15px;
+}
+.trending-gallery .card .image-overlay{
+    font-size: 15px;
+    padding: 0px;
+}
+.trending-gallery .card .image-overlay .card-discription{
+    font-size: 12px;
+}
+.trending-gallery .card .image-overlay .cards-link{
+    font-size: 12px;
+}
+
+
+.arrow-down::before{
+    width: 7px;
+    height: 7px;
+}
+.arrow-down::after{
+    width: 7px;
+    height: 7px;
+}
+
 }
